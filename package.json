@@ -1,0 +1,45 @@
+{
+  "name": "gulp-ga",
+  "description": "Inject google analytics into html with Gulp (gulpjs.com)",
+  "version": "0.0.1",
+  "homepage": "http://github.com/zhhz/gulp-ga",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zhhz/gulp-ga.git"
+  },
+  "author": {
+    "name": "Zhonghai Zuo",
+    "email": "zhonghai.zuo@gmail.com",
+    "url": "http://zhonghaizuo.com"
+  },
+  "main": "./index.js",
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "through2": "^0.5.1"
+  },
+  "engines": {
+    "node": ">= 0.9.0"
+  },
+  "keywords": [
+    "gulp",
+    "google analytics",
+    "gulpplugin",
+    "gulp-plugin"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/zhhz/gulp-ga/raw/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/zhhz/gulp-ga/issues"
+  },
+  "maintainers": [
+    {
+      "name": "zhhz",
+      "email": "zhonghai.zuo@gmail.com"
+    }
+  ],
+  "directories": {}
+}
