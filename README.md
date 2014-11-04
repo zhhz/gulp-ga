@@ -1,6 +1,6 @@
 # gulp-ga
 
-> Adds google analystics code into html file.
+> Adds Google Analytics code into HTML files.
 
 ## Information
 
@@ -10,7 +10,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Insert google analystics code into html with gulp (gulpjs.com)</td>
+<td>Insert Google Analytics code into HTML with Gulp (gulpjs.com)</td>
 </tr>
 <tr>
 <td>Node Version</td>
