@@ -1,7 +1,7 @@
 {
   "name": "gulp-ga",
   "description": "Inject google analytics into html with Gulp (gulpjs.com)",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "http://github.com/zhhz/gulp-ga",
   "repository": {
     "type": "git",

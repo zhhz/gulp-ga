@@ -22,7 +22,7 @@ module.exports = function(opts) {
         "    </script>\n  </" + opts.tag + ">\n";
 
     var content = file.contents.toString();
-    content = content.replace('<\/head>', ga);
+    content = content.replace('<\/' + opts.tag + '>', ga);
     file.contents = new Buffer(content);
     cb(null, file)
   });
