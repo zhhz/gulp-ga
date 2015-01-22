@@ -46,11 +46,9 @@ gulp.task('ga', function(){
 
 ```
 
-####You can view more examples in the [example folder.](https://github.com/zhhz/gulp-ga/tree/master/examples)
-
 ## Options
 ### options.url
-The page you want analysis
+The page you want analysis (required)
 
     Type: `String`
 
@@ -61,7 +59,7 @@ Example:
 ```
 
 ### options.uid
-Set the uid
+Set the uid (required)
 
     Type: `String`
 
@@ -84,11 +82,60 @@ Example:
 .pipe(ga({tag: 'body'}))
 ```
 
+### options.anonymizeIp
+Allow requests IP address anonymization
+
+    Type: `Boolean`
+    Default: `true`
+
+Example:
+
+```js
+.pipe(ga({anonymizeIp: false}))
+```
+
+
+### options.demographics
+Enable display features.
+
+    Type: `Boolean`
+    Default: `false`
+
+Example:
+
+```js
+.pipe(ga({demographics: true}))
+```
+
+### options.linkAttribution
+Set an enhanced link-tracking functionality.
+
+    Type: `Boolean`
+    Default: `false`
+
+Example:
+
+```js
+.pipe(ga({linkAttribution: true}))
+```
+
+### options.bounceTime
+Set a specific bounce time.
+
+    Type: `Number`
+    Default: `N/A`
+
+Example:
+
+```js
+.pipe(ga({bunceTime: 15}))
+```
+
 ## LICENSE
 
 (MIT License)
 
-Copyright (c) 2014 Zhonghai Zuo <zhonghai.zuo@gmail.com> zhhz
+Copyright (c) 2014,2015 Zhonghai Zuo <zhonghai.zuo@gmail.com> zhhz
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
