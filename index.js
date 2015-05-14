@@ -9,6 +9,7 @@ module.exports = function(opts) {
   opts.anonymizeIp     = opts.anonymizeIp     === false ? false : true;
   opts.demographics    = opts.demographics    === true  ? true  : false;
   opts.linkAttribution = opts.linkAttribution === true  ? true  : false;
+  opts.sendPageView    = opts.sendPageView    === true  ? true  : false;
 
   return through.obj(function(file, enc, cb) {
     if(file.isNull()) return cb(null, file);
@@ -21,11 +22,11 @@ module.exports = function(opts) {
         "      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n" +
         "\n" +
         "      ga('create', '" + opts.uid + "', '" + opts.url + "');\n" +
-        "      ga('send', 'pageview');\n" +
         "      ga('set', 'anonymizeIp'," + opts.anonymizeIp + ");\n";
     if(opts.demographics)   { ga += "      ga('require', 'displayfeatures');\n"; }
     if(opts.linkAttribution){ ga += "      ga('require', 'linkid', 'linkid.js');\n"; }
     if(opts.bounceTime > 1) { ga += "      setTimeout(\"ga('send', 'event', 'read', '" + opts.bounceTime + " seconds')\"," +  opts.bounceTime + "000);\n"; }
+    if(opts.sendPageView > 1) { ga += "      ga('send', 'pageview');\n"; }
 
     ga += "    </script>\n  </" + opts.tag + ">\n";
 
