@@ -9,10 +9,11 @@ module.exports = function(opts) {
   opts.anonymizeIp     = opts.anonymizeIp     === false ? false : true;
   opts.demographics    = opts.demographics    === true  ? true  : false;
   opts.linkAttribution = opts.linkAttribution === true  ? true  : false;
+  opts.minify          = opts.minify          === true  ? true  : false;
 
   return through.obj(function(file, enc, cb) {
     if(file.isNull()) return cb(null, file);
-    if(file.isStream()) return cb(new Error('gulp-ga: streams not supported'))
+    if(file.isStream()) return cb(new Error('gulp-ga: streams not supported'));
 
     var ga = "  <script>\n" +
         "      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n" +
@@ -29,6 +30,9 @@ module.exports = function(opts) {
 
     ga += "    </script>\n  </" + opts.tag + ">\n";
 
+    if(opts.minify) {
+      ga = ga.replace(/\s*\n\s*/g, '');
+    }
     var content = file.contents.toString();
     content = content.replace('<\/' + opts.tag + '>', ga);
     file.contents = new Buffer(content);
