@@ -131,6 +131,18 @@ Example:
 .pipe(ga({bunceTime: 15}))
 ```
 
+### options.minify
+Minify GA script code (remove `\n` and trailing whitespace).
+
+    Type: `Boolean`
+    Default: `false`
+
+Example:
+
+```js
+.pipe(ga({minify: true}))
+```
+
 ## LICENSE
 
 (MIT License)
