@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.0.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.3.12
+3 info using node@v5.0.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/zhonghai/Projects/tools-workspace/gulp-ga',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/zhonghai/.npm/gulp-ga/0.0.5/package.tgz not in flight; packing
+9 info lifecycle gulp-ga@0.0.5~prepublish: gulp-ga@0.0.5
+10 silly lifecycle gulp-ga@0.0.5~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/Users/zhonghai/.npm/gulp-ga/0.0.5/package.tgz',
+11 verbose tar pack   '/Users/zhonghai/Projects/tools-workspace/gulp-ga' ]
+12 verbose tarball /Users/zhonghai/.npm/gulp-ga/0.0.5/package.tgz
+13 verbose folder /Users/zhonghai/Projects/tools-workspace/gulp-ga
+14 verbose addLocalTarball adding from inside cache /Users/zhonghai/.npm/gulp-ga/0.0.5/package.tgz
+15 silly cache afterAdd gulp-ga@0.0.5
+16 verbose afterAdd /Users/zhonghai/.npm/gulp-ga/0.0.5/package/package.json not in flight; writing
+17 verbose afterAdd /Users/zhonghai/.npm/gulp-ga/0.0.5/package/package.json written
+18 silly publish { name: 'gulp-ga',
+18 silly publish   description: 'Inject google analytics into html with Gulp (gulpjs.com)',
+18 silly publish   version: '0.0.5',
+18 silly publish   homepage: 'http://github.com/zhhz/gulp-ga',
+18 silly publish   repository: { type: 'git', url: 'git://github.com/zhhz/gulp-ga.git' },
+18 silly publish   author:
+18 silly publish    { name: 'Zhonghai Zuo',
+18 silly publish      email: 'zhonghai.zuo@gmail.com',
+18 silly publish      url: 'http://zhonghaizuo.com' },
+18 silly publish   main: './index.js',
+18 silly publish   dependencies: { 'gulp-util': '^3.0.0', through2: '^0.5.1' },
+18 silly publish   engines: { node: '>= 0.9.0' },
+18 silly publish   keywords: [ 'gulp', 'google analytics', 'gulpplugin', 'gulp-plugin' ],
+18 silly publish   licenses:
+18 silly publish    [ { type: 'MIT',
+18 silly publish        url: 'http://github.com/zhhz/gulp-ga/raw/master/LICENSE' } ],
+18 silly publish   bugs: { url: 'https://github.com/zhhz/gulp-ga/issues' },
+18 silly publish   maintainers: [ { name: 'zhhz', email: 'zhonghai.zuo@gmail.com' } ],
+18 silly publish   directories: {},
+18 silly publish   readme: '# gulp-ga\n\n> Adds Google Analytics code into HTML files.\n\n## Information\n\n<table>\n<tr>\n<td>Package</td><td>gulp-ga</td>\n</tr>\n<tr>\n<td>Description</td>\n<td>Insert Google Analytics code into HTML with Gulp (gulpjs.com)</td>\n</tr>\n<tr>\n<td>Node Version</td>\n<td>>= 0.9</td>\n</tr>\n<tr>\n<td>Gulp Version</td>\n<td>3.x</td>\n</tr>\n</table>\n\n## Usage\n\n\n#### Install\n\n```bash\n$ npm install gulp-ga --save-dev\n```\n\n## Example\n\n```js\nvar gulp = require(\'gulp\');\nvar ga = require(\'gulp-ga\');\n\n// Basic usage:\ngulp.task(\'ga\', function(){\n  gulp.src(\'./index.html\')\n  .pipe(ga({url: \'mydomain.com\', uid: \'UA-12345678-1\'}))\n  .pipe(gulp.dest(\'./\'));\n});\n\n```\n\n## Options\n### options.url\nThe page you want analysis (required)\n\n    Type: `String`\n\nExample:\n\n```js\n.pipe(ga({url: \'mydomain.com\'})\n```\n\n### options.uid\nSet the uid (required)\n\n    Type: `String`\n\nExample:\n\n```js\n.pipe(ga({uid: \'UA-12345678-1\'}))\n```\n\n### options.tag\nSet a specific tag to insert before it.\n\n    Type: `String`\n    Default: `head`\n\nExample:\n\n```js\n.pipe(ga({tag: \'head\'}))\n.pipe(ga({tag: \'body\'}))\n```\n\n### options.anonymizeIp\nAllow requests IP address anonymization\n\n    Type: `Boolean`\n    Default: `true`\n\nExample:\n\n```js\n.pipe(ga({anonymizeIp: false}))\n```\n\n\n### options.demographics\nEnable display features.\n\n    Type: `Boolean`\n    Default: `false`\n\nExample:\n\n```js\n.pipe(ga({demographics: true}))\n```\n\n### options.linkAttribution\nSet an enhanced link-tracking functionality.\n\n    Type: `Boolean`\n    Default: `false`\n\nExample:\n\n```js\n.pipe(ga({linkAttribution: true}))\n```\n\n### options.bounceTime\nSet a specific bounce time.\n\n    Type: `Number`\n    Default: `N/A`\n\nExample:\n\n```js\n.pipe(ga({bunceTime: 15}))\n```\n\n### options.minify\nMinify GA script code (remove `\\n` and trailing whitespace).\n\n    Type: `Boolean`\n    Default: `false`\n\nExample:\n\n```js\n.pipe(ga({minify: true}))\n```\n\n### options.sendPageView\nSend page view option.\n\n    Type: `Boolean`\n    Default: `true`\n\nExample:\n\n```js\n.pipe(ga({sendPageView: true}))\n```\n\n## LICENSE\n\n(MIT License)\n\nCopyright (c) 2014,2015 Zhonghai Zuo <zhonghai.zuo@gmail.com> zhhz\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n"Software"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '9e43924d33c93e23852eedcdbf1de3e6cdb92467',
+18 silly publish   _id: 'gulp-ga@0.0.5',
+18 silly publish   scripts: {},
+18 silly publish   _shasum: '57ec0faa806081fdf56c4a8eb1dc14808d9fea8c',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name gulp-ga
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/gulp-ga
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /Users/zhonghai/.npm/gulp-ga/0.0.5/package.tgz
+26 verbose request uri https://registry.npmjs.org/gulp-ga
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 9:11:45 AM
+29 verbose request id 8c89c3033c919aa0
+30 http request PUT https://registry.npmjs.org/gulp-ga
+31 http 403 https://registry.npmjs.org/gulp-ga
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sun, 15 Nov 2015 14:11:41 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-iad2123-IAD',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1447596700.698614,VS0,VE1047' }
+33 verbose request invalidating /Users/zhonghai/.npm/registry.npmjs.org/gulp-ga on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.0.5." : gulp-ga
+35 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid gulp-ga
+38 verbose cwd /Users/zhonghai/Projects/tools-workspace/gulp-ga
+39 error Darwin 14.5.0
+40 error argv "/usr/local/Cellar/node/5.0.0/bin/node" "/usr/local/bin/npm" "publish"
+41 error node v5.0.0
+42 error npm  v3.3.12
+43 error code E403
+44 error "You cannot publish over the previously published version 0.0.5." : gulp-ga
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
