@@ -143,6 +143,18 @@ Example:
 .pipe(ga({minify: true}))
 ```
 
+### options.sendPageView
+Send page view option.
+
+    Type: `Boolean`
+    Default: `true`
+
+Example:
+
+```js
+.pipe(ga({sendPageView: true}))
+```
+
 ## LICENSE
 
 (MIT License)
