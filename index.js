@@ -27,7 +27,7 @@ module.exports = function(opts) {
     if(opts.demographics)     { ga += "      ga('require', 'displayfeatures');\n"; }
     if(opts.linkAttribution)  { ga += "      ga('require', 'linkid', 'linkid.js');\n"; }
     if(opts.bounceTime > 1)   { ga += "      setTimeout(\"ga('send', 'event', 'read', '" + opts.bounceTime + " seconds')\"," +  opts.bounceTime + "000);\n"; }
-    if(opts.sendPageView > 1) { ga += "      ga('send', 'pageview');\n"; }
+    if(opts.sendPageView) { ga += "      ga('send', 'pageview');\n"; }
 
     ga += "    </script>\n  </" + opts.tag + ">\n";
 
