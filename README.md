@@ -128,7 +128,7 @@ Set a specific bounce time.
 Example:
 
 ```js
-.pipe(ga({bunceTime: 15}))
+.pipe(ga({bounceTime: 15}))
 ```
 
 ### options.minify
@@ -159,7 +159,7 @@ Example:
 
 (MIT License)
 
-Copyright (c) 2014,2015 Zhonghai Zuo <zhonghai.zuo@gmail.com> zhhz
+Copyright (c) 2014,2016 Zhonghai Zuo <zhonghai.zuo@gmail.com> zhhz
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
