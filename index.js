@@ -6,7 +6,9 @@ module.exports = function(opts) {
   opts.url             = opts.url || '';
   opts.tag             = opts.tag || 'head';
   opts.uid             = opts.uid || '';
+  opts.require         = opts.require || '';
   opts.anonymizeIp     = opts.anonymizeIp     === false ? false : true;
+  opts.nonceTag        = opts.nonceTag        === true  ? true  : false;
   opts.demographics    = opts.demographics    === true  ? true  : false;
   opts.linkAttribution = opts.linkAttribution === true  ? true  : false;
   opts.sendPageView    = opts.sendPageView    === true  ? true  : false;
@@ -15,8 +17,9 @@ module.exports = function(opts) {
   return through.obj(function(file, enc, cb) {
     if(file.isNull()) return cb(null, file);
     if(file.isStream()) return cb(new Error('gulp-ga: streams not supported'));
-
-    var ga = "  <script>\n" +
+    var ga = "  <script";
+    if( opts.nonceTag ) { ga += ' nonce="{{nonce}}"'; }
+    ga += ">\n" +
         "      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n" +
         "      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n" +
         "      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n" +
@@ -28,6 +31,7 @@ module.exports = function(opts) {
     if(opts.linkAttribution)  { ga += "      ga('require', 'linkid', 'linkid.js');\n"; }
     if(opts.bounceTime > 1)   { ga += "      setTimeout(\"ga('send', 'event', 'read', '" + opts.bounceTime + " seconds')\"," +  opts.bounceTime + "000);\n"; }
     if(opts.sendPageView) { ga += "      ga('send', 'pageview');\n"; }
+    if(opts.require) { ga += "      ga('require', '" + opts.require + "');\n"; }
 
     ga += "    </script>\n  </" + opts.tag + ">\n";
 

@@ -69,6 +69,17 @@ Example:
 .pipe(ga({uid: 'UA-12345678-1'}))
 ```
 
+### options.require
+Set the require field (optional)
+
+    Type: `String`
+
+Example:
+
+```js
+.pipe(ga({require: 'urlChangeTracker'}))
+```
+
 ### options.tag
 Set a specific tag to insert before it.
 
@@ -154,6 +165,20 @@ Example:
 ```js
 .pipe(ga({sendPageView: true}))
 ```
+
+### options.nonceTag
+Add a nonce attribute and a nonce template to the script tag. So that we can implement a Content Security Policy that does not allow unsafe-inline scripts to be loaded.
+
+    Type: `Boolean`
+    Default: `false`
+
+Example:
+
+```js
+.pipe(ga({nonceTag: true}))
+```
+
+
 
 ## LICENSE
 
